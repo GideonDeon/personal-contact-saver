@@ -25,7 +25,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default = False, cast = bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.118.103']
+ALLOWED_HOSTS = ['personal-contact-saver.onrender.com', 'localhost', '127.0.0.1', '192.168.118.103']
 
 
 # Application definition
