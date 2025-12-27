@@ -1,87 +1,116 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
-    <link rel="shortcut icon" href="/static/images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script  type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-</head>
-<body>
-     
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Contact Saver</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="/static/images/icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-3.6.0.min.js' %}"
+    ></script>
+  </head>
+  <body>
     <div class="phone mockup andriod">
-        <div class="speaker header"></div>
-        <div class="camera c_hole dot"></div>
-        <div class="body screen bk-ground">
-            <div class="time">
-                <span class="dclick">(Double click to see more contact info)</span>
-                <span class="thold">(Hold to see more contact info) </span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span id="clock"></span>&nbsp;<span id="session"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><i class="fa-solid fa-battery-three-quarters fa-lg"></i></span>
-            </div>
-            <div class="search">
-                <form method="GET" class="find">
-                    <input type="text" class="sear" name="searched" id="find" value="{{search}}" placeholder="search">
-                    <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>   
-            
-            {% for deet in deets %}
-                <main class="contain">
-                    <div class="title">
-                        <span class="init" id="init">{{deet.initials}}</span>
-                        <span class="deet">{{deet}}</span>
-                    </div>
-                    <div class="details">
-                        <span><i class="fa-solid fa-user"></i></span><p>First Name: {{deet.firstname}}</p>
-                        <p>Last Name: {{deet.lastname}}</p>
-                        <p>Nick Name: {{deet.nickname}}</p>
-                        <p>Phone: {{deet.phone}}</p>
-                        <p>Email: {{deet.email}}</p>
-                        <p>Home Address: {{deet.home}}</p>
-                        <span><i class="fa-solid fa-building"></i></span><p> <p>Company: {{deet.company}}</p>
-                        <p>Title: {{deet.title}}</p>
-                        <p>Work Address: {{deet.work}}</p>
-                        <span><i class="fa-solid fa-location-dot"></i></span><p>  <p>State: {{deet.state}}</p>
-                        <p>City: {{deet.city}}</p>
-                        <p>Zip-code: {{deet.zip}}</p>
-                        <p>Country: {{deet.country}}</p>
-                        <p>Website: {{deet.website}}</p>
-                        <p>Note: {{deet.note}}</p>
-                        <a href="{% url 'edit' deet.id %}" class="ebtn"><i class="fa-solid fa-pencil"></i></a>
-                        <br>
-                        <br>
-                        <br>
-                        <a href="{% url 'delete' deet.id %}" class="ebtn"><i class="fa-solid fa-trash-can"></i></a>
-                    </div>
-                </main>     
-            {% endfor %}
-            <div class="add">
-              <a href="{% url 'Create' %}"><p id="do">+</p></a>
-            </div>
+      <div class="speaker header"></div>
+      <div class="camera c_hole dot"></div>
+      <div class="body screen bk-ground">
+        <div class="time">
+          <span class="dclick">(Double click to see more contact info)</span>
+          <span class="thold">(Hold to see more contact info) </span
+          >&nbsp;&nbsp;&nbsp;&nbsp; <span id="clock"></span>&nbsp;<span
+            id="session"
+          ></span
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span><i class="fa-solid fa-battery-three-quarters fa-lg"></i></span>
         </div>
-        <div class="button volume"></div>
-        <div class="seticon"><i class="fa-solid fa-gear"></i></div>
+        <div class="search">
+          <form method="GET" class="find">
+            <input
+              type="text"
+              class="sear"
+              name="searched"
+              id="find"
+              value="{{search}}"
+              placeholder="search"
+            />
+            <button class="btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+
+        {% for deet in deets %}
+        <main class="contain">
+          <div class="title">
+            <span class="init" id="init">{{deet.initials}}</span>
+            <span class="deet">{{deet}}</span>
+          </div>
+          <div class="details">
+            <span><i class="fa-solid fa-user"></i></span>
+            <p>First Name: {{deet.firstname}}</p>
+            <p>Last Name: {{deet.lastname}}</p>
+            <p>Nick Name: {{deet.nickname}}</p>
+            <p>Phone: {{deet.phone}}</p>
+            <p>Email: {{deet.email}}</p>
+            <p>Home Address: {{deet.home}}</p>
+            <span><i class="fa-solid fa-building"></i></span>
+            <p></p>
+            <p>Company: {{deet.company}}</p>
+            <p>Title: {{deet.title}}</p>
+            <p>Work Address: {{deet.work}}</p>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <p></p>
+            <p>State: {{deet.state}}</p>
+            <p>City: {{deet.city}}</p>
+            <p>Zip-code: {{deet.zip}}</p>
+            <p>Country: {{deet.country}}</p>
+            <p>Website: {{deet.website}}</p>
+            <p>Note: {{deet.note}}</p>
+            <a href="{% url 'edit' deet.id %}" class="ebtn"
+              ><i class="fa-solid fa-pencil"></i
+            ></a>
+            <br />
+            <br />
+            <br />
+            <a href="{% url 'delete' deet.id %}" class="ebtn"
+              ><i class="fa-solid fa-trash-can"></i
+            ></a>
+          </div>
+        </main>
+        {% endfor %}
+        <div class="add">
+          <a href="{% url 'Create' %}"><p id="do">+</p></a>
+        </div>
+      </div>
+      <div class="button volume"></div>
+      <div class="seticon"><i class="fa-solid fa-gear"></i></div>
     </div>
     <div class="settings">
-        <form  action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button class="logBtn">Log Out</button>
-        </form>
-        <p id="change">change theme</p>
-        <div class="colors">
-            <div class="col" data-color="black"></div>
-            <div class="col" data-color="green"></div>
-            <div class="col" data-color="blue"></div>
-            <div class="col" data-color="red"></div>
-            <div class="col" data-color="yellow"></div>
-        </div>
-        
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button class="logBtn">Log Out</button>
+      </form>
+      <p id="change">change theme</p>
+      <div class="colors">
+        <div class="col" data-color="black"></div>
+        <div class="col" data-color="green"></div>
+        <div class="col" data-color="blue"></div>
+        <div class="col" data-color="red"></div>
+        <div class="col" data-color="yellow"></div>
+      </div>
     </div>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-</body>
+  </body>
 </html>

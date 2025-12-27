@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
-    <link rel="shortcut icon" href="/static/images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script  type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="/static/images/icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-3.6.0.min.js' %}"
+    ></script>
+  </head>
+  <body>
     <div class="phone mockup andriod">
-        <div class="speaker header"></div>
-        <div class="camera c_hole dot"></div>
-        <div class="body screen bk-ground">
-            <div class="time2"><span id="clock"></span>&nbsp;<span id="session"></span>&nbsp;<span><i class="fa-solid fa-battery-three-quarters fa-lg"></i></span></div>
-            <div class="top screentop head">
-                <p>create contact</p>
-            </div>
-           <form action="" method="post" name="c_form" class="c_form">
-                {%csrf_token%}
-                {{form}}
-                <button class="bTn">Save</button>
-           </form>
+      <div class="speaker header"></div>
+      <div class="camera c_hole dot"></div>
+      <div class="body screen bk-ground">
+        <div class="time2">
+          <span id="clock"></span>&nbsp;<span id="session"></span>&nbsp;<span
+            ><i class="fa-solid fa-battery-three-quarters fa-lg"></i
+          ></span>
         </div>
-        <div class="button volume"></div>
+        <div class="top screentop head">
+          <p>create contact</p>
+        </div>
+        <form action="" method="post" name="c_form" class="c_form">
+          {%csrf_token%}
+          <label>Initials</label>
+          {{ form.initials }}
+
+          <label>Firstname</label>
+          {{ form.firstname }}
+
+          <label>Lastname</label>
+          {{ form.lastname }}
+
+          <label>Nickname</label>
+          {{ form.nickname }}
+
+          <label>Phone</label>
+          {{ form.phone }}
+
+          <label>Email</label>
+          {{ form.email }}
+
+          <label>Home</label>
+          {{ form.home }}
+
+          <label>Company</label>
+          {{ form.company }}
+
+          <label>Title</label>
+          {{ form.title }}
+
+          <label>Work</label>
+          {{ form.work }}
+
+          <label>State</label>
+          {{ form.state }}
+
+          <label>City</label>
+          {{ form.city }}
+
+          <label>Zip</label>
+          {{ form.zip_code }}
+
+          <label>Country</label>
+          {{ form.country }}
+
+          <label>Website</label>
+          {{ form.website }}
+
+          <label>Note</label>
+          {{ form.note }}
+          <button class="bTn">Save</button>
+        </form>
+      </div>
+      <div class="button volume"></div>
     </div>
-    
+
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-</body>
+  </body>
 </html>

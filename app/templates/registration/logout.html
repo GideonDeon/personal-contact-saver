@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
-    <link rel="shortcut icon" href="/static/images/icon.png" type="image/x-icon">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Contact Saver</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="/static/images/icon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <div class="phone mockup andriod">
-        <div class="speaker header"></div>
-        <div class="camera c_hole dot"></div>
-        <div class="body screen bk-ground">
-            <div class="bk-g">
-                <h1>You have been logged Out</h1>
-                <p class="log"><a href="{% url 'login' %}">Login</a></p>
-            </div>
-            <div class="foot">deon &copy; 2022</div>
+      <div class="speaker header"></div>
+      <div class="camera c_hole dot"></div>
+      <div class="body screen bk-ground">
+        <div class="bk-g">
+          <h1>You have been logged Out</h1>
+          <p class="log"><a href="{% url 'login' %}">Login</a></p>
         </div>
-        <div class="button volume"></div>
+        <div class="reserved">deon &copy; 2022</div>
+      </div>
+      <div class="button volume"></div>
     </div>
-</body>
+  </body>
 </html>

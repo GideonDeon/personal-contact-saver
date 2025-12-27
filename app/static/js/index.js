@@ -3,7 +3,7 @@ var cont = true
 $('main').on({dblclick:function(){
     if(cont){
         $(this).animate({
-            height: "115vh"
+            height: "50em"
         }, 500, function(){
             cont = false
         })

@@ -118,7 +118,6 @@
         margin-top:55px;
     
     }
-
     .c_form>input, .c_form>textarea{
         display: block;
         margin-bottom: 10px;
@@ -163,8 +162,7 @@
         left: 0;
         border-top-left-radius: 8%;
         border-top-right-radius: 8%;
-        z-index: 3;
-        
+        z-index: 3;  
     }
     .init{
         display: inline-block;
@@ -1193,6 +1191,8 @@
         display: none;
     }
 }
+
+/* Outside@Media Specificity */
 #check{
     accent-color: black;
 }
@@ -1314,9 +1314,11 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.foot{
+.reserved{
     position: absolute;
-    bottom: 0;
+    top: 20px;
+    height: fit-content;
+    width: fit-content;
 }
 /* CHANGE THEME */
 .colors>.col:nth-child(1){
