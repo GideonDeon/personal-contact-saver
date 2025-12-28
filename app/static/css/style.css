@@ -10,7 +10,6 @@
         box-sizing: border-box;
         margin: auto;
         padding: auto;
-        font-family: "Raleway";
     }
     .phone{
         height: 96vh;
@@ -309,7 +308,6 @@
         box-sizing: border-box;
         margin: auto;
         padding: auto;
-        font-family: "Raleway";
     }
     .phone{
         height: 96vh;
@@ -608,7 +606,6 @@
         box-sizing: border-box;
         margin: auto;
         padding: auto;
-        font-family: "Raleway";
     }
     .phone{
         height: 96vh;
@@ -909,7 +906,6 @@
         box-sizing: border-box;
         margin: auto;
         padding: auto;
-        font-family: "Raleway";
     }
     .phone{
         height: 96vh;
@@ -1191,6 +1187,7 @@
         display: none;
     }
 }
+
 
 /* Outside@Media Specificity */
 #check{
